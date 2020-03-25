@@ -42,9 +42,9 @@ def check_pair(p1, p2):
     print('\r\n轮动组：%s %.3f, %s %.3f' % (p1, wave1, p2, wave2))
 
     if wave1 > wave2 and wave1 > rate:
-        print('全买入%s, 止损价格: %.4f' % (price1 * (1 - maxWaveRate)))
+        print('全买入%s, 止损价格: %.4f' % (p1, price1 * (1 - maxWaveRate)))
     elif wave2 > wave1 and wave2 > rate:
-        print('全买入%s, 止损价格: %.4f' % (price2 * (1 - maxWaveRate)))
+        print('全买入%s, 止损价格: %.4f' % (p2, price2 * (1 - maxWaveRate)))
     else:
         if (wave1 > wave2):
             print('全空仓，追涨%s 价格: %.4f' % (p1, price1 * (1 + maxWaveRate)))
@@ -61,6 +61,7 @@ check_pair('BTC/USDT', 'ETH/USDT')
 check_pair('BTC/USDT', 'BCH/USDT')
 check_pair('BTC/USDT', 'EOS/USDT')
 check_pair('ETH/USDT', 'EOS/USDT')
+check_pair('BSV/USDT', 'BCH/USDT')
 
 print('')
 print(requests.get(url).text)
